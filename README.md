@@ -29,7 +29,7 @@ LuSE Trading Report Automation is a tool designed to streamline the collection a
 ```bash
 $ git clone https://github.com/yourusername/luse-trading-automation.git
 $ pip install tabula-py pandas
-$ cd luse-trading-automation
+$ cd luse-trading-automation/src
 ```
 
 ## Usage
