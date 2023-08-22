@@ -19,3 +19,9 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/suwilanji-chipofya-hadat/luse-data-fetcher"
 "Bug Tracker" = "https://github.com/suwilanji-chipofya-hadat/luse-data-fetcher/issues"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["luseFinReportDownloader"]
