@@ -108,7 +108,7 @@ class Downloader:
 			if link['text'] == self.config.get_end()[1]:
 				return idx
 	def fetch_streams(self):
-		new_urls = self.url[self.get_start_idx(): self.get_end_idx() + 1]
+		new_urls = self.urls[self.get_start_idx(): self.get_end_idx() + 1]
 		for url in new_urls:
 			success, data = self.fetch_data(url['url'])
 			if success:
