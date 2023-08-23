@@ -10,9 +10,9 @@ class ExtractorTest(unittest.TestCase):
         self.assertEqual(len(self.extractor.streams), 5)
     def test_get_dataframes(self):
         dfs = self.extractor.generate_dataframes()
-        columns = dfs[0].coulmns
+        columns = dfs[0][1].columns
         print(columns)
         for df in dfs:
-            self.assertEqual(columns, df.columns)
+            self.assertEqual(columns, df[1].columns)
 if __name__ == '__main__':
     unittest.main()

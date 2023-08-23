@@ -10,13 +10,14 @@ class DocumentExtractor:
         downloader = download.Downloader(config=config)
         downloader.fetch_streams()
         self.streams = downloader.streams
+
     def generate_dataframes(self):
         dataframes = []
         for idx, stream in enumerate(self.streams):
             with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as temp_pdf_file:
-                temp_pdf_file.write(stream.getvalue())
+                temp_pdf_file.write(stream['data'].getvalue())
                 src_pdf = temp_pdf_file.name
-                dataframes.append(read_data.get_data(src_pdf))
+                dataframes.append({'text': stream['text'], 'df': read_data.get_data(src_pdf)})
             
             '''
             output_filename = f"output_data_{idx}.csv"
