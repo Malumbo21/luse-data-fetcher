@@ -112,6 +112,6 @@ class Downloader:
 		for url in new_urls:
 			success, data = self.fetch_data(url['url'])
 			if success:
-				self.streams.append(data)
+				self.streams.append({'text': url['text'], 'data': data})
 			else:
 				print("Error saving stream")
