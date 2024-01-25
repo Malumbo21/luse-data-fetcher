@@ -23,14 +23,14 @@ except Exception as e:
 def create_document(data, collection=Config.collection):
     db = firestore.client()
 
-    doc_exists = db.collection(collection).where("hash", "==", data["hash"])
+    doc_exists = db.collection(collection).where("hash", "==", data["hash"]).get()
     if doc_exists:
         return 1
     ref = db.collection(collection).document()
     ref.set(data)
     return 0
 # todo 
-def get_documents(collection=Config.colleciton,isntrument=None, start=None, end=None):
+def get_documents(collection=Config.collection,isntrument=None, start=None, end=None):
     docs = []
     db = firestore.client()
     ref = db.collection(collection)
